@@ -1,0 +1,234 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Школа Чайкиной</title>
+<link href="/static/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!-- js -->
+<script src="/static/jquery.min.js"></script>
+<!-- //js -->
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Floral Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="/static/move-top.js"></script>
+<script type="text/javascript" src="/static/easing.js"></script>
+{#<script type="text/javascript" src="/static/test.js"></script>#}
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+</head>
+
+<body>
+<!-- header -->
+	<div class="header">
+	<div class="container">
+		<div class="header-info">
+			<div class="logo">
+				<a href="index.html"><img src="/static/logo.png" alt=" " /></a>
+			</div>
+			<div class="logo-right">
+				<span class="menu"><img src="/static/menu.png" alt=" "/></span>
+				<ul class="nav1">
+					<li class="cap"><a href="index.html">Главная</a></li>
+					<li><a href="articles.html">Разделы Книги</a></li>
+					<li><a href="/register/">Регистрация</a></li>
+					<li><a href="/comments/">Отзывы</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+				<!-- script for menu -->
+					<script>
+						$( "span.menu" ).click(function() {
+						$( "ul.nav1" ).slideToggle( 300, function() {
+						 // Animation complete.
+						});
+						});
+					</script>
+				<!-- //script for menu -->
+		</div>
+	</div>
+	</div>
+<!-- header -->
+<!-- content -->
+	<div class="content">
+	<div class="container">
+		<div class="content-text">
+{% block single %}{% endblock %}
+{% block about %}{% endblock %}
+
+			<div class="categories">
+				<div class="categ">
+					<div class="recent-com" class="view">
+						<h3>Авторизация</h3>
+						<form action="/auth/logout/" method="get" class="view" id="logout_form" onsubmit="event.preventDefault(); onLogOut()" {% if not username %} hidden {% endif %}>
+                            <input type="submit" class="btn logout_btn" value="Выйти({{ username }})">
+                        </form>
+
+                        <form action="/auth/login/" method="post" class="view" id="login_form" {% if username %} hidden {% endif %}>
+
+                            <input type="text" name="username" id="username" value="glavie" class="span2 search-query" placeholder="Логин">
+                            <input type="password" name="password" id="password" value="qwerty123" class="span2 search-query" placeholder="Пароль">
+                            <input class="btn" type="submit" value="Войти">
+                        </form>
+					</div>
+				</div>
+			</div>
+{% block login %}{% endblock %}
+{% block comments %}{% endblock %}
+		</div>
+	</div>
+	</div>
+<!-- //content -->
+<!-- footer -->
+	<div class="footer">
+	<div class="container">
+		<div class="footer-grids">
+			<div class="footer-grid">
+				<h3>Коротко об авторе</h3>
+				<p>Nullam ac urna velit. Pellentesque in arcu tortor.
+				Pellentesque nec est et elit varius pulvinar eget vitae sapien.
+				Aenean vehicula accumsan gravida. Cum sociis natoque penatibus
+				et magnis dis parturient montes, nascetur ridiculus mus. Phasellus
+				et lectus in urna consequat consectetur ut eget risus. Nunc augue diam,
+				mattis eu tristique luctus, aliquam vitae massa. Praesent lacinia nisi
+				sit amet risus cursus porta.</p>
+			</div>
+			<div class="footer-grid">
+				<h3>Разделы сайта</h3>
+				<ul>
+					<li class="cap1"><a href="index.html">Главная</a></li>
+					<li><a href="/about/">Об авторе</a></li>
+					<li><a href="articles.html">Разделы книги</a></li>
+				</ul>
+			</div>
+			<div class="footer-grid">
+				<h3>Рекомендованная литература</h3>
+				<ul>
+					<li><a href="single.html">Vestibulum iaculis scelerisque</a></li>
+					<li><a href="single.html">Cras aliquam erat</a></li>
+					<li><a href="single.html">Morbi imperdiet ipsum</a></li>
+					<li><a href="single.html">Donec faucibus mollis</a></li>
+					<li><a href="single.html">Praesent lacinia nisi</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	</div>
+	<div class="footer-bottom">
+	<div class="container">
+		<p>Template by<a href="http://w3layouts.com/"> w3layouts</a></p>
+	</div>
+	</div>
+<!-- //footer -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear'
+								 		};
+										*/
+
+										$().UItoTop({ easingType: 'easeOutQuart' });
+
+									});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+
+<script type="text/javascript">
+    function onLogOut() {
+        $.ajax({
+            url: "/auth/logout/",
+            dataType: 'json',
+            success: function () {
+                $('#logout_form').attr('hidden', 'true');
+                $('#login_form').removeAttr('hidden');
+            },
+            error: function () {
+                window.location.replace('/auth/login/')
+            }
+        });
+    };
+    function getCookie(c_name)
+    {
+    if (document.cookie.length > 0)
+    {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1)
+        {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) c_end = document.cookie.length;
+            return unescape(document.cookie.substring(c_start,c_end));
+        }
+    }
+    return "";
+    }
+    $(document).on('submit', '#login_form', function (e){
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: { "X-CSRFToken": getCookie("csrftoken") }
+        });
+        $.ajax({
+            type: 'POST',
+            url:"/auth/login/",
+            data:$('#login_form').serializeArray(),
+            dataType: 'json',
+            success: function () {
+                $('.logout_btn').attr('value', 'Выйти(' + $('#username').val() + ')');
+                $('#logout_form').removeAttr('hidden');
+                $('#login_form').attr('hidden', 'true');
+            },
+            error: function () {
+                window.location.replace('/auth/login/')
+            }
+        });
+    });
+
+    $(document).on('submit', '#comment_text', function (e) {
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: { "X-CSRFToken": getCookie("csrftoken") }
+        });
+        $.ajax({
+            type: 'POST',
+            url: "/addcomment/",
+            data:$('#comment_text').serialize(),
+            dataType: 'json',
+            success: function () {
+                $('.comments').load('/comments/ .comments');
+            },
+            error: function () {
+                window.location.replace('/register/')
+            }
+            });
+        });
+    </script>
+</html>

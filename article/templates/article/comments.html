@@ -1,0 +1,22 @@
+{% extends 'article/index.html' %}
+{% load staticfiles %}
+
+{% block comments %}
+    <div class="consequat comments">
+    <div class="container">
+            <h3>Отзывы</h3>
+                {% for comment in comments %}
+                    <h6>{{ comment.comment_author }}</h6>
+                    <h6>{{ comment.comment_date }}</h6>
+                    <p>{{ comment.comment_text }}</p>
+<hr>
+
+{% endfor %}
+{{ form.errors }}
+<form action="/addcomment/" method="post" id="comment_text" name="comment_text">
+    {{ form }}
+<input type="submit" class="btn" value="Отправить">
+</form>
+    </div>
+    </div>
+{% endblock %}
